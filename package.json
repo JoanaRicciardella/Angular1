@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently -c \"yellow.bold,green.bold\" -n \"SERVER,BUILD\" \"nodemon server\" \"ng build --watch\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,8 +20,12 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "concurrently": "^5.3.0",
     "core-js": "^2.5.4",
-    "rxjs": "^6.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.15",
+    "path": "^0.12.7",
+    "rxjs": "~6.0.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
