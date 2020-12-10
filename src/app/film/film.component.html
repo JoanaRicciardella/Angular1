@@ -1,0 +1,35 @@
+
+  <li [ngClass]="{'list-group-item': true,
+                  'list-group-item-info':filmOnAir == 'Blue Ray',
+                  'list-group-item-warning': filmOnAir == 'En Salle'}">
+
+  <div class="row">
+    <div class="col-2">
+      <img [src]="filmAffiche" class="affiche"> <br>
+    </div>
+    <div class="col-8">
+      <div class="onAir" *ngIf="filmOnAir == 'Blue Ray'">
+        <img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1402/sarahdesign140200335/26309173-blue-ray-ic%C3%B4ne-du-disque.jpg">
+      </div>
+      <div class="onAir" *ngIf="filmOnAir == 'En Salle'">
+        <img src="https://www.premiere.fr/sites/default/files/styles/partage_rs/public/2020-07/salle_de_cinema.jpg">
+      </div>
+      <h3 [ngStyle]="{color: changeColor()}">Film: {{ filmName }} - {{ date }}</h3>
+      
+      <!-- <input type="text" class="form-control" [(ngModel)]="filmName"> -->
+    
+    </div>
+    <div class="col-2">
+      <a [routerLink]="['/modif', id]" class="btn btn-outline-warning">M</a> &nbsp;
+      <button class="btn btn-outline-danger" (click)="removeFilm(id)">X</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      {{synopsis}}
+    </div>
+  </div>
+                  
+  
+</li>
